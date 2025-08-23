@@ -5,13 +5,18 @@
 	group: ""
 	icon: "kubejs:reality_controller_running"
 	id: "1EC448FE2169EFF9"
-	order_index: 4
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: [
 				"6425A4B344A3E70F"
 				"16BED30DF56C2600"
+			]
+			description: [
+				"Osmium can be found in some of the Reality Chips."
+				""
+				"It is up to you to figure out which ones..."
 			]
 			id: "2A8B73B53DE73CC6"
 			tasks: [{
@@ -36,11 +41,6 @@
 				{
 					id: "69C59761E498F70E"
 					item: "minecraft:raw_iron"
-					type: "item"
-				}
-				{
-					id: "3F7099F1E848ED49"
-					item: "minecraft:raw_copper"
 					type: "item"
 				}
 				{
@@ -191,6 +191,7 @@
 		}
 		{
 			dependencies: ["16BED30DF56C2600"]
+			description: ["One of the Reality Chips will generate Endstone. The Endstone can be crushed to yeild Ender Dust."]
 			icon: "ae2:ender_dust"
 			id: "6DA0C1A9A1E1AC7B"
 			rewards: [{
@@ -275,6 +276,11 @@
 		}
 		{
 			dependencies: ["3BDAAFC3E00E1C72"]
+			description: [
+				"Placing a bucket of magma will summon a small magma cube."
+				""
+				"If the magma cube is eaten by a frog it will drop a froglight."
+			]
 			icon: "minecraft:ochre_froglight"
 			id: "34D7245BC72FBAD5"
 			rewards: [
@@ -351,6 +357,7 @@
 		}
 		{
 			dependencies: ["08AA2EDF465DE029"]
+			description: ["Frogs need to be summoned into existence in order to start making froglights."]
 			icon: "minecraft:frogspawn"
 			id: "3BDAAFC3E00E1C72"
 			tasks: [
@@ -438,18 +445,44 @@
 		}
 		{
 			dependencies: ["5EE912358F2227BA"]
+			description: [
+				"To summon more complicated mobs you will need to get Moderate Soul Gems."
+				""
+				"A health sacrifice must be made to complete the ritual. Health from any mob can be used. If no other mob is nearby then the health will be taken from the nearest player instead."
+			]
+			icon: "kubejs:moderate_soul_gem"
 			id: "08AA2EDF465DE029"
-			tasks: [{
-				id: "7A6A8FCEE4A00064"
+			rewards: [{
+				count: 2
+				id: "7971960BAF8D9C94"
 				item: "kubejs:moderate_soul_gem"
 				type: "item"
 			}]
+			subtitle: "A Worthy Sacrifice"
+			tasks: [
+				{
+					id: "13641B3DF8F4318F"
+					item: "eidolon:necrotic_focus"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "20B52DBF82A26666"
+					item: "kubejs:moderate_soul_gem"
+					type: "item"
+				}
+			]
 			title: "Moderate Summoning"
 			x: 0.0d
 			y: 42.5d
 		}
 		{
 			dependencies: ["08AA2EDF465DE029"]
+			description: [
+				"Wither skeletons can be summoned in. They will always drop their skull exactly like other summoned mobs."
+				""
+				"Natural coal can be obtained with the Reality Frame."
+			]
 			icon: {
 				Count: 1
 				id: "endrem:wither_eye"
@@ -514,19 +547,6 @@
 			dependencies: ["6425A4B344A3E70F"]
 			icon: "kubejs:reality_controller_running"
 			id: "16BED30DF56C2600"
-			rewards: [
-				{
-					count: 3
-					id: "0CDAB4E41CA24CF9"
-					item: "kubejs:party_popper"
-					type: "item"
-				}
-				{
-					id: "2BC7B82C0195BB7D"
-					item: "botania:record_gaia_1"
-					type: "item"
-				}
-			]
 			shape: "gear"
 			size: 3.0d
 			tasks: [{
@@ -620,7 +640,10 @@
 			y: 93.0d
 		}
 		{
-			dependencies: ["020D04D0081B0376"]
+			dependencies: [
+				"020D04D0081B0376"
+				"71B9B26E6BA141F3"
+			]
 			id: "245653B3451C76FA"
 			shape: "hexagon"
 			tasks: [{
@@ -635,7 +658,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 73.0d
+			y: 73.5d
 		}
 		{
 			dependencies: ["20BB0A14D35143A3"]
@@ -689,6 +712,7 @@
 		}
 		{
 			dependencies: ["16BED30DF56C2600"]
+			description: ["A few Reality Chips have Netherrack in them. This can be used to make Blaze Cakes."]
 			icon: "create:blaze_cake"
 			id: "7321D8BB155B472C"
 			rewards: [{
@@ -998,6 +1022,30 @@
 			x: -4.0d
 			y: 47.0d
 		}
+		{
+			icon: "minecraft:beehive"
+			id: "71B9B26E6BA141F3"
+			rewards: [{
+				count: 3
+				id: "7848A53424C8FE3D"
+				item: "minecraft:honey_bottle"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "7B480A6A299153B2"
+					item: "minecraft:beehive"
+					type: "item"
+				}
+				{
+					id: "1FA8EA43AC45B072"
+					item: "minecraft:honeycomb"
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 71.0d
+		}
 	]
-	title: "Chapter 5"
+	title: "Chapter 6"
 }

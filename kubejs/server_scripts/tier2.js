@@ -11,7 +11,6 @@ ServerEvents.recipes(event => {
 	})
 
 	event.remove({output: 'createaddition:alternator'})
-	event.remove({output: 'createaddition:electric_motor'})
 	event.shaped('createaddition:alternator', [
 		' B ', 
 	  	'ACA',
@@ -20,7 +19,19 @@ ServerEvents.recipes(event => {
 	  	A: 'create:iron_sheet',
 	  	B: 'create:shaft',
 		C: 'immersiveengineering:coil_lv',
-	  	D: 'immersiveengineering:light_engineering'
+	  	D: 'immersiveengineering:heavy_engineering'
+  })
+
+  	event.remove({output: 'createaddition:electric_motor'})
+	event.shaped('createaddition:electric_motor', [
+		' B ', 
+	  	'ACA',
+	  	'ADA'  
+	  	],{
+	  	A: 'create:brass_sheet',
+	  	B: 'create:shaft',
+		C: 'immersiveengineering:coil_mv',
+	  	D: 'immersiveengineering:heavy_engineering'
   })
 
 	event.recipes.create.compacting('kubejs:concrete_brick', [
@@ -28,14 +39,6 @@ ServerEvents.recipes(event => {
 	])
 
 	event.remove({id: 'immersiveengineering:crafting/blastbrick'})
-	event.shaped('4x immersiveengineering:blastbrick', [
-		'ABA', 
-		'BAB',
-		'ABA'  
-		],{
-		A: 'kubejs:concrete_brick',
-		B: 'minecraft:nether_brick'
-  	})
 
 	event.custom({
 		"type": "immersiveengineering:blast_furnace",
@@ -87,33 +90,22 @@ ServerEvents.recipes(event => {
 	})
 
 	event.remove({id: 'immersiveengineering:cokeoven/coke'})
+
+	event.remove({id: 'immersiveengineering:cokeoven/charcoal'})
 	event.custom({
 		"type": "immersiveengineering:coke_oven",
 		"creosote": 250,
 		"input": {
-			"tag": "forge:charcoal"
+			"tag": "minecraft:logs_that_burn"
 		},
 		"result": {
-			"item": "immersiveengineering:coal_coke"
+			"item": "minecraft:charcoal"
 		},
 		"time": 100
 	})
 
 	event.remove({id: 'immersiveengineering:blastfurnace/steel'})
 	event.remove({id: 'immersiveengineering:blastfurnace/steel_block'})
-	event.custom({
-		"type": "immersiveengineering:blast_furnace",
-		"input": {
-		  "tag": "forge:ingots/iron"
-		},
-		"result": {
-		  "item": "kubejs:hot_steel"
-		},
-		"slag": {
-		  "tag": "forge:slag"
-		},
-		"time": 1200
-	})
 
 	event.remove({id: 'supplementaries:checker'})
 	event.recipes.create.crushing([
@@ -140,5 +132,7 @@ ServerEvents.recipes(event => {
   	})
 
     event.replaceInput({id: 'minecraft:flint_and_steel'}, 'minecraft:iron_ingot', 'minecraft:flint')
+
+	event.recipes.create.mixing([Item.of('supplementaries:ash').withChance(0.2)], 'kubejs:wallpaper').lowheated()
 
 })

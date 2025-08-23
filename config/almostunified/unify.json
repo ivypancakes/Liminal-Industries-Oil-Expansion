@@ -3,10 +3,12 @@
     "minecraft",
     "kubejs",
     "crafttweaker",
+    "crafts_and_additions",
+    "tfmg",
     "create",
-    "thermal",
     "immersiveengineering",
-    "mekanism"
+    "mekanism",
+    "thermal"
   ],
   "stoneStrata": [
     "stone",
@@ -28,7 +30,8 @@
     "forge:rods/{material}",
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
-    "forge:storage_blocks/raw_{material}"
+    "forge:storage_blocks/raw_{material}",
+    "forge:{material}"
   ],
   "materials": [
     "aeternium",
@@ -77,7 +80,8 @@
     "tin",
     "tungsten",
     "uranium",
-    "zinc"
+    "zinc",
+    "bitumen"
   ],
   "priorityOverrides": {},
   "customTags": {},

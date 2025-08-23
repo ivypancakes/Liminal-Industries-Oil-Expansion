@@ -4,6 +4,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:component_electronic'
      ], 'immersiveengineering:slab_treated_wood_horizontal', [
         event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', 'immersiveengineering:wire_copper']),
+        event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', 'tfmg:steel_ingot']),
         event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', 'minecraft:quartz'])
      ]).transitionalItem('kubejs:incomplete_component_electronic').loops(1)
 
@@ -13,7 +14,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:component_electronic_adv'
      ], 'immersiveengineering:plate_duroplast', [
         event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'actuallyadditions:empowered_void_crystal']),
-        event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:wirecoil_copper']),
+        event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:tfmg:rubber_sheet']),
         event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:wire_electrum']),
         event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:electron_tube'])
      ]).transitionalItem('kubejs:incomplete_component_electronic_adv').loops(1)
@@ -26,7 +27,7 @@ ServerEvents.recipes(event => {
 		'immersiveengineering:light_engineering'
 	   ], 'kubejs:light_engineering_empty', [
 		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'immersiveengineering:component_electronic']),
-		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'create:fluid_pipe']),
+		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'tfmg:heavy_plate']),
 		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'kubejs:fluorescent_tube']),
 	]).transitionalItem('kubejs:light_engineering_empty').loops(1)
 
@@ -35,13 +36,27 @@ ServerEvents.recipes(event => {
 
 	event.remove({id: 'immersiveengineering:blueprint/component_electronic_adv'})
 	event.remove({id: 'immersiveengineering:crafting/heavy_engineering'})
+	event.remove({output: 'tfmg:steel_mechanism'})
 	event.recipes.createSequencedAssembly([
+		Item.of('tfmg:steel_mechanism').withChance(130.0), // this is the item that will appear in JEI as the result
+		Item.of('tfmg:heavy_sheet').withChance(8.0), // the rest of these items will be part of the scrap
+		Item.of('tfmg:steel_cogwheel').withChance(8.0),
+	],  'tfmg:heavy_plate', [
+		event.recipes.createDeploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:steel_cogwheel']),
+		event.recipes.createDeploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:rubber_sheet']),
+		event.recipes.createDeploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:steel_ingot']),
+		event.recipes.createDeploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'kubejs:fluorescent_tube']),
+		event.recipes.createDeploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:screw']),
+		event.recipes.createDeploying('tfmg:unfinished_steel_mechanism', ['tfmg:unfinished_steel_mechanism', 'tfmg:screwdriver'])
+	]).transitionalItem('kubejs:heavy_engineering_empty').loops(2)
+
+		event.recipes.createSequencedAssembly([
 		'immersiveengineering:heavy_engineering'
 	],  'kubejs:heavy_engineering_empty', [
 		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'kubejs:soul_fuse']),
-		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'immersiveengineering:component_electronic']),
+		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'tfmg:steel_mechanism']),
 		event.recipes.createDeploying('kubejs:light_engineering_empty', ['kubejs:light_engineering_empty', 'create:electron_tube']),
-	]).transitionalItem('kubejs:heavy_engineering_empty').loops(1)
+	]).transitionalItem('tfmg:').loops(1)
 
 	
 
@@ -73,5 +88,12 @@ ServerEvents.recipes(event => {
     ],  'minecraft:snowball', [
 		event.recipes.createDeploying('minecraft:snowball', ['minecraft:snowball', 'thermal:blizz_rod'])
     ]).transitionalItem('minecraft:snowball',).loops(250)
+
+	event.recipes.create.sequenced_assembly([
+        'kubejs:cobblestone_bucket'
+    ],  'minecraft:bucket', [
+		event.recipes.createDeploying('minecraft:bucket', ['minecraft:bucket', 'minecraft:cobblestone']),
+    ]).transitionalItem('minecraft:bucket',).loops(10)
+	event.smelting('minecraft:lava_bucket', 'kubejs:cobblestone_bucket')
 
 })

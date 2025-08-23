@@ -1,228 +1,198 @@
 ServerEvents.recipes(event => {
-	
-	event.remove({output: 'enderio:pulsating_alloy_ingot'})
-	event.recipes.enderio.alloy_smelting(
-		Item.of("enderio:pulsating_alloy_ingot"),
-		[Item.of("mekanism:ingot_osmium"), Ingredient.of("ae2:ender_dust")],
-		5000,
-		5.5
-	);
 
-	event.remove({output: 'mekanism:basic_control_circuit'})
-	event.custom({
-		"type":"mekanism:metallurgic_infusing",
-		"chemicalInput":{"amount":100,"tag":"mekanism:redstone"},
-		"itemInput":{"ingredient":{"item":"enderio:pulsating_alloy_ingot"}},
-		"output":{"item":"mekanism:basic_control_circuit"}
+	event.remove({id: 'enderio:item_conduit'})
+	event.recipes.thermal.bottler('enderio:item_conduit', [
+		Fluid.of('thermal:ender', 100), 
+		'enderio:pressurized_fluid_conduit'])
+
+	event.remove({output: 'ae2:controller'})
+	event.shaped('ae2:controller', [
+		'ABA',
+		'CDE',
+		'FGH'  
+		],{
+		A: 'immersiveengineering:component_electronic_adv',
+		B: 'ae2:engineering_processor',
+		C: 'actuallyadditions:empowered_diamatine_crystal',
+		D: 'thermal:machine_frame',
+		E: 'actuallyadditions:empowered_restonia_crystal',
+		F: 'ae2:formation_core',
+		G: 'actuallyadditions:empowered_void_crystal',
+		H: 'ae2:annihilation_core'
 	})
 
-	event.remove({output: 'mekanism:advanced_control_circuit'})
-	event.custom({
-		"type":"mekanism:metallurgic_infusing",
-		"chemicalInput":{"amount":100,"tag":"mekanism:gold"},
-		"itemInput":{"ingredient":{"item":"mekanism:alloy_infused"}},
-		"output":{"item":"mekanism:advanced_control_circuit"}
-	})
-
-	event.remove({output: 'mekanism:elite_control_circuit'})
-	event.custom({
-		"type":"mekanism:metallurgic_infusing",
-		"chemicalInput":{"amount":100,"tag":"mekanism:diamond"},
-		"itemInput":{"ingredient":{"item":"mekanism:alloy_reinforced"}},
-		"output":{"item":"mekanism:elite_control_circuit"}
-	})
-
-	event.remove({output: 'mekanism:alloy_atomic'})
-	event.remove({output: 'mekanism:ultimate_control_circuit'})
-	event.custom({
-		"type":"mekanism:metallurgic_infusing",
-		"chemicalInput":{"amount":100,"tag":"mekanism:refined_obsidian"},
-		"itemInput":{"ingredient":{"item":"mekanism:alloy_atomic"}},
-		"output":{"item":"mekanism:ultimate_control_circuit"}
-	})
-
-    event.custom({
-		"type": "eidolon:ritual_brazier_crafting",
-		"focusItems": [
-		  {
-			"type": "forge:partial_nbt",
-			"item": "minecraft:potion",
-			"nbt": "{Potion:\"minecraft:poison\"}"
-		  }
-		],
-		"healthRequirement": 3.0,
-		"keepNbtOfReagent": false,
-		"output": {
-		  "item": "kubejs:moderate_soul_gem"
-		},
-		"pedestalItems": [
-		  {
-			"item": "eidolon:soul_shard"
-		  },
-		  {
-			"item": "mekanism:enriched_carbon"
-		  },
-		  {
-			"item": "mekanism:enriched_gold"
-		  },
-		  {
-			"item": "eidolon:soul_shard"
-		  }
-		],
-		"reagent": [
-		  {
-			"item": "eidolon:lesser_soul_gem"
-		  }
-		]
-	  })
-
-	event.remove({output: 'mekanism:ingot_refined_glowstone'})
-	event.custom({"type":"mekanism:reaction",
-		"duration":100,
-		"fluidInput":{"amount":500,"fluid":"thermal:glowstone"},
-		"gasInput":{"amount":100,"gas":"mekanism:oxygen"},
-		"gasOutput":{"amount":50,"gas":"mekanism:oxygen"},
-		"itemInput":{"ingredient":[{"item":"minecraft:gold_ingot"}]},
-		"itemOutput":{"item":"mekanism:ingot_refined_glowstone"}
-	})
-
-	event.remove({output: 'enderio:energetic_alloy_ingot'})
-	event.custom({"type":"mekanism:reaction",
-		"duration":100,
-		"fluidInput":{"amount":500,"fluid":"thermal:redstone"},
-		"gasInput":{"amount":100,"gas":"mekanism:oxygen"},
-		"gasOutput":{"amount":50,"gas":"mekanism:oxygen"},
-		"itemInput":{"ingredient":[{"item":"mekanism:ingot_refined_glowstone"}]},
-		"itemOutput":{"item":"enderio:energetic_alloy_ingot"}
-	})
-
-	event.remove({output: 'thermal:enderium_ingot'})
-	event.custom({"type":"mekanism:reaction",
-		"duration":200,
-		"fluidInput":{"amount":250,"fluid":"thermal:ender"},
-		"gasInput":{"amount":200,"gas":"mekanism:osmium"},
-		"gasOutput":{"amount":10,"gas":"mekanism:chlorine"},
-		"itemInput":{"ingredient":[{"item":"thermal:diamond_dust"}]},
-		"itemOutput":{"item":"thermal:enderium_ingot"}
-	})
-
-	event.remove({output: 'mekanism:teleportation_core'})
-	event.custom({
-		"type": "enderio:soul_binding",
-		"energy": 76800,
-		"entity_type": "minecraft:enderman",
-		"exp": 6,
-		"input": {
-		  "item": "ae2:singularity"
-		},
-		"output": {
-		  "item": "mekanism:teleportation_core"
-		}
-	})
-
-	event.custom({
-		"type": "enderio:soul_binding",
-		"energy": 76800,
-		"entity_type": "minecraft:snow_golem",
-		"exp": 0,
-		"input": {
-		  "item": "minecraft:ice"
-		},
-		"output": {
-		  "item": "thermal:blizz_rod"
-		}
-	})
-
-	event.remove({output: 'ae2:quantum_entangled_singularity'})
-	event.custom({"type":"mekanism:combining",
-		"extraInput":{"ingredient":{"item":"kubejs:quantum_string"}},
-		"mainInput":{"amount":2,"ingredient":{"item":"ae2:singularity"}},
-		"output":{"item":"ae2:quantum_entangled_singularity"}
-	})
-
-	event.recipes.createMixing('create:chromatic_compound', [
-		Fluid.of('cofh_core:experience', 100),
-		'mekanism:dye_base',
-		'ae2:fluix_dust'
-	]).superheated()
-
-	event.remove({id: 'ae2:ender_dust'})
-	event.recipes.create.crushing([
-		Item.of('ae2:ender_dust').withChance(0.2)
-	],
-		'minecraft:end_stone'
-	)
-
-	event.custom({
-		"type": "ae2:transform",
-		"circumstance": {
-		"type": "explosion"
-		},
-		"ingredients": [
-		{
-			"item": "ae2:singularity"
-		}
-		],
-		"result": {
-		"count": 1,
-		"item": "endrem:black_eye"
-		}
-	})
-
-	event.shaped('kubejs:ai', [
+	event.remove({output: 'enderio:void_chassis'})
+	event.shaped('enderio:void_chassis', [
 		'AEA', 
 		'BCB',
 		'ADA'  
 		],{
-		A: 'enderio:end_steel_ingot',
-		B: 'mekanism:basic_control_circuit',
-		C: 'refurbished_furniture:television',
-		D: 'thermal:blizz_rod',
-		E: 'enderio:guardian_diode'
+		A: 'enderio:dark_steel_ingot',
+		B: 'enderio:infinity_rod',
+		C: 'thermal:machine_frame',
+		D: 'actuallyadditions:empowered_void_crystal',
+		E: 'eidolon:ender_calx'
 	})
 
-	event.remove({output: 'mekanism:steel_casing'})
-	event.shaped('mekanism:steel_casing', [
+	event.remove({output: 'enderio:ensouled_chassis'})
+	event.shaped('enderio:ensouled_chassis', [
 		'AEA', 
 		'BCB',
 		'ADA'  
 		],{
-		A: 'immersiveengineering:ingot_steel',
-		B: 'mekanism:basic_control_circuit',
+		A: 'enderio:soularium_ingot',
+		B: 'enderio:soul_powder',
 		C: 'enderio:void_chassis',
-		D: 'immersiveengineering:component_electronic_adv',
-		E: 'kubejs:ai'
+		D: 'actuallyadditions:empowered_emeradic_crystal',
+		E: 'kubejs:moderate_soul_gem'
 	})
 
-	event.remove({id: 'botania:mana_infusion/ender_pearl_from_ghast_tear'})
-	event.remove({id: 'thermal:machines/centrifuge/centrifuge_magma_cream'})
-	event.remove({output: 'enderio:primitive_alloy_smelter'})
-	event.remove({output: 'botania:fel_pumpkin'})
-	event.remove({id: 'thermal:rubber_from_vine'})
-	event.remove({id: 'thermal:rubber_from_dandelion'})
-	event.remove({output: 'mekanism:pellet_antimatter'})
+	event.recipes.thermal.pulverizer('immersiveengineering:dust_hop_graphite', 'immersiveengineering:ingot_hop_graphite')
 
-	event.remove({output: 'supplementaries:lumisene_bucket'})
-	event.recipes.thermal.crucible(Fluid.of('supplementaries:lumisene', 100), 'botania:bifrost_perm')
+	let pressing = (output, die, input, count) => {
+		event.custom({
+			"type": "thermal:press",
+			"ingredients": [
+			{
+				"item": input,
+				"count": count
+			},
+			{
+				"item": die
+			}
+			],
+			"result": [
+			{
+				"item": output
+			}
+			],
+			"energy": 800
+		})
+	}
 
-	event.replaceInput({id: 'thermal:machines/crucible/crucible_ender_pearl'}, 'minecraft:ender_pearl', 'ae2:ender_dust')
-	event.remove({output: 'enderio:infinity_rod'})
-	event.recipes.createCutting('2x enderio:infinity_rod', 'enderio:infinity_rod')
+	event.remove({output: 'immersiveengineering:graphite_electrode'})
+	event.remove({output: 'immersiveengineering:ingot_hop_graphite'})
+	event.remove({output: 'immersiveengineering:dust_hop_graphite'})
+	event.remove({output: 'ae2:fluix_pearl'})
+	pressing("immersiveengineering:ingot_hop_graphite", "thermal:chiller_ingot_cast", "immersiveengineering:dust_coke", 8)
+	pressing("immersiveengineering:graphite_electrode", "thermal:chiller_rod_cast", "immersiveengineering:dust_hop_graphite", 4)
+	pressing("ae2:fluix_pearl", "thermal:chiller_ball_cast", "ae2:fluix_dust", 3)
 
-	event.remove({output: 'mekanism:alloy_reinforced'})
-	event.recipes.botania.terra_plate("mekanism:alloy_reinforced", ["thermal:enderium_ingot", "botania:bifrost_perm",'minecraft:ender_pearl'], 250000)
+	event.remove({output: 'enderio:grains_of_infinity'})
+	event.recipes.thermal.centrifuge([
+		Item.of('enderio:confusing_powder').withChance(0.10)
+	], 
+		'kubejs:carpet_dust')
 
-	event.remove({output: 'mekanism:alloy_infused'})
-	event.recipes.mekanismPurifying('mekanism:alloy_infused', 'minecraft:ochre_froglight', {gas: 'mekanism:oxygen', amount: 5})
+	event.shaped('kubejs:diamond_brush', [
+		'  A', 
+		' B ',
+		'   '  
+		],{
+		A: 'minecraft:stick',
+		B: '#forge:dusts/diamond'
+	})
 
-	event.replaceInput({input: 'minecraft:coal_block'}, 'minecraft:coal_block', 'thermal:charcoal_block')
-	event.replaceInput({input: '#forge:dusts/coal'}, '#forge:dusts/coal', 'mekanism:dust_charcoal')
-	event.replaceInput({output: 'create:blaze_cake_base'}, '#forge:eggs', 'create:cinder_flour')
+	event.remove({id: 'immersiveengineering:alloysmelter/brass'})
 
-	event.replaceInput({output: 'enderio:alloy_smelter'}, 'minecraft:furnace', 'thermal:machine_furnace')
-	event.replaceInput({output: 'enderio:sag_mill'}, 'minecraft:piston', 'thermal:machine_pulverizer')
-	event.replaceInput({output: 'mekanism:metallurgic_infuser'}, 'minecraft:furnace', 'thermal:machine_furnace')
-	event.replaceInput({output: 'mekanism:enrichment_chamber'}, 'mekanism:steel_casing', 'enderio:void_chassis')
-	event.replaceInput({output: 'minecraft:magma_cream'}, 'minecraft:blaze_powder', 'thermal:sulfur_dust')
+	event.replaceInput({ mod: 'actuallyadditions' }, 'actuallyadditions:wood_casing', 'create:brass_casing')
+	event.replaceInput({ mod: 'actuallyadditions' }, 'actuallyadditions:iron_casing', 'create:railway_casing')
+	event.replaceInput({ mod: 'actuallyadditions' }, 'actuallyadditions:ender_casing', 'create:railway_casing')
+
+	event.remove({output: 'thermal:tar'})
+	event.remove({output: 'thermal:bitumen'})
+	event.custom({
+		"type": "thermal:pyrolyzer",
+		"ingredient": {
+		  "item": "thermal:bitumen"
+		},
+		"result": [
+		  {
+			"item": "thermal:tar"
+		  },
+		  {
+			"item": "minecraft:coal",
+			"chance": 0.25
+		  },
+		  {
+			"fluid": "immersiveengineering:creosote",
+			"amount": 250
+		  }
+		],
+		"experience": 0.15
+	})
+
+	event.custom({
+		"type": "thermal:pyrolyzer",
+		"ingredient": {
+		  "item": "kubejs:sculked_sculk_scrubber"
+		},
+		"result": [
+		  {
+			"item": "kubejs:sculk_scrubber"
+		  },
+		  {
+			"item": "minecraft:echo_shard"
+		  },
+		  {
+			"item": "minecraft:echo_shard"
+		  },
+		  {
+			"fluid": "enderio:dew_of_the_void",
+			"amount": 250
+		  }
+		],
+		"experience": 0.15
+	})
+
+	event.custom({
+		"type": "thermal:refinery",
+		"ingredient": {
+		  "fluid": "thermal:crude_oil",
+		  "amount": 500
+		},
+		"result": [
+		  {
+			"fluid": "thermal:heavy_oil",
+			"amount": 20
+		  },
+		  {
+			"fluid": "thermal:light_oil",
+			"amount": 30
+		  },
+		  {
+			"item": "thermal:bitumen"
+		  }
+		],
+		"energy": 1000
+	})
+
+		event.custom({
+		"type": "thermal:refinery",
+		"ingredient": {
+		  "fluid": "thermal:heavy_oil",
+		  "amount": 500
+		},
+		"result": [
+		  {
+			"fluid": "thermal:light_oil",
+			"amount": 250
+		  }
+		],
+		"energy": 1000
+	})
+
+	event.recipes.createFilling('immersiveengineering:fiberboard', [
+		'#minecraft:planks',
+		Fluid.of('immersiveengineering:phenolic_resin', 100)
+])
+
+	event.remove({id: 'create:crushing/crimsite_recycling'})
+	event.remove({id: 'create:crushing/crimsite'})
+
+	event.recipes.createCrushing([
+ 		Item.of('create:crushed_raw_iron').withChance(0.4),
+	 	Item.of('immersiveengineering:raw_aluminum').withChance(0.02),
+	], 'create:crimsite')
 
 })

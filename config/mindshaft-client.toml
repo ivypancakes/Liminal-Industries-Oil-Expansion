@@ -1,0 +1,82 @@
+#whether mindshaft is currently enabled.
+enabled = false
+
+[behavior]
+	#manually specify minimap zoom level without using in-game key bindings
+	#refer to zoom level list for details.
+	#minimap zoom level when adjusted with key bindings is also saved here.
+	"minimap zoom level" = 0
+	#list of zoom levels available for both minimap and fullscreen.
+	#specified as a radius in chunks.
+	#notably: centered on the northwest corner of the player's current chunk.
+	#so a radius of 6 is 12 chunks (or 192 blocks) across.
+	#it's best if these are in numerical order (ascending or descending),
+	#otherwise the order they cyle through may not be as expected.
+	#values currently constrained to be between 1 and 7.
+	#high values (over 5) will greatly impact update times unless you adjust the segment rate.
+	#whether you adjust the segment rate or not, high values will strongly impact performance.
+	"zoom level list" = ["5", "3", "2", "1"]
+	#manually specify fullscreen map zoom level without using in-game key bindings
+	#refer to zoom level list for details.
+	#fullscreen map zoom level when adjusted with key bindings is also saved here.
+	"fullscreen zoom level" = 0
+	#whether the zoom in/zoom out key bindings should wrap around.
+	#e.g. when zooming in at the tightest zoom level, go to the widest zoom level.
+	"zoom wraparound" = false
+
+[appearance]
+	#size of minimap as expressed in percentage of the vertical size of the screen.
+	#since the minimap is a square, it will be the same width as height.
+	#Range: 5 ~ 50
+	"minimap width" = 35
+	#size of fullscreen map as expressed in percentage of the vertical size of the screen.
+	#since the minimap is a square, it will be the same width as height.
+	#Range: 5 ~ 100
+	"fullscreen map width" = 85
+	#set false to base the minimap offset on the right side of the screen.
+	"is offset from left?" = false
+	#the minimap edge is offset this far from the edge of the screen.
+	#expressed as percentage of horizontal screen width.
+	#0 is flush to edge.
+	#has no effect on the fullscreen map, which is always centered.
+	#Range: 0 ~ 100
+	"horizontal offset percentage" = 0
+	#set false to base the minimap offset on the bottom side of the screen.
+	"is offset from top?" = false
+	#the minimap edge is offset this far from the edge of the screen.
+	#expressed as percentage of vertical screen width.
+	#0 is flush to edge.
+	#has no effect on the fullscreen map, which is always centered.
+	#Range: 0 ~ 100
+	"vertical offset percentage" = 0
+	#this is an arbitrary measurement, set to 16 by default.
+	#Range: 1 ~ 256
+	"cursor size" = 16
+	#this is an arbitrary measurement, set to 32 by default.
+	#Range: 1 ~ 256
+	"fullscreen cursor size" = 32
+	#100 is fully opaque, 0 is invisible.
+	#Range: 0 ~ 100
+	"cursor opacity" = 100
+	#100 is fully opaque, 0 is invisible.
+	#Range: 0 ~ 100
+	"fullscreen cursor opacity" = 100
+
+[performance]
+	#how many segments (chunk tiles) can be cached per tick.
+	#can increase graphical stuttering if too high.
+	#lower values increase the visibility of tile scanning,
+	#most especially at wider zoom levels.
+	#Range: 8 ~ 256
+	"segment processing rate" = 24
+	#how many extra ticks it takes to update the map.
+	#higher numbers reduce graphical stuttering in the game itself, but increase map lag.
+	#Range: 0 ~ 8
+	"map refresh delay" = 1
+	#time in ticks before a segment is forcibly removed.
+	#setting this too low can cause performance issues.
+	#setting this too high can increase memory load.
+	#you probably don't need to change this.
+	#Range: 1500 ~ 20000
+	"segment forced expiration time" = 8000
+

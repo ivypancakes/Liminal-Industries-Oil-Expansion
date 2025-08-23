@@ -1,4 +1,4 @@
-scoreboard players set max RNG_Constant 118
+scoreboard players set max RNG_Constant 120
 function backrooms:rng
 
 execute if score RNG RNG_Variable matches 1 run place template backrooms:bedrock1
@@ -11,7 +11,7 @@ execute if score RNG RNG_Variable matches 7 run place template backrooms:blue_cu
 execute if score RNG RNG_Variable matches 8 run place template backrooms:cannonballs
 execute if score RNG RNG_Variable matches 9 run place template backrooms:cardboard_castle
 execute if score RNG RNG_Variable matches 10 run place template backrooms:cardboard_house
-execute if score RNG RNG_Variable matches 11 run place template backrooms:carpet_drop
+execute if score RNG RNG_Variable matches 11 run place template backrooms:condoslime
 execute if score RNG RNG_Variable matches 12 run place template backrooms:ceilling_nest
 execute if score RNG RNG_Variable matches 13 run place template backrooms:chair_pillars
 execute if score RNG RNG_Variable matches 14 run place template backrooms:connected_cross
@@ -118,3 +118,5 @@ execute if score RNG RNG_Variable matches 114 run place template backrooms:husk_
 execute if score RNG RNG_Variable matches 115 run place template backrooms:husk_cross5
 execute if score RNG RNG_Variable matches 116 run place template backrooms:husk_cross6
 execute if score RNG RNG_Variable matches 117 run place template backrooms:stair_cross
+execute if score RNG RNG_Variable matches 118 run place template backrooms:escalate_1
+execute if score RNG RNG_Variable matches 119 run place template backrooms:escalate_2

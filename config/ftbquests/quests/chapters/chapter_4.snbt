@@ -1,0 +1,606 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "chapter_4"
+	group: ""
+	icon: "tfmg:pumpjack_base"
+	id: "0E52BB9240E92D53"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7C0EE6F4BEE559C3"]
+			description: ["The Heavy Engineering Frame marks the start of the construction of the heavier machines. They will form the foundation for the megafactory that is being constructed."]
+			id: "78F13758BBD911A0"
+			rewards: [
+				{
+					id: "3CC49BBDE0D95FEC"
+					item: {
+						Count: 1
+						id: "fairylights:pennant_bunting"
+						tag: {
+							color: 11546150
+							pattern: [{
+								Count: 1b
+								id: "fairylights:triangle_pennant"
+								tag: {
+									color: 11546150
+								}
+							}]
+							text: {
+								styling: [I; ]
+								value: ""
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "02BFF400B3F054FC"
+					item: "kubejs:party_popper"
+					type: "item"
+				}
+				{
+					id: "580EEC0F030A51DB"
+					item: "farmersdelight:roast_chicken_block"
+					type: "item"
+				}
+				{
+					id: "6F5FF24398F4C5B1"
+					item: "berry_good:music_disc_fox"
+					type: "item"
+				}
+			]
+			size: 3.0d
+			tasks: [
+				{
+					id: "56E8E33407531F61"
+					item: "kubejs:heavy_engineering_empty"
+					type: "item"
+				}
+				{
+					id: "71B37BC5508CF8E6"
+					item: "immersiveengineering:heavy_engineering"
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: 19.0d
+		}
+		{
+			description: [
+				"In order for the Sculk Scrubber to function, it must be placed above a block of Sculk."
+				""
+				"When you have done this correctly, it can be right-clicked in order to activate the machine."
+				""
+				"Upon activation it will start absorbing the sculk, leaving a strange but safe porous stone behind."
+				""
+				"It should be noted that nothing can be placed directly on the sculk, not even the sculk scrubber. In order to get it in the right position, you need to place it on the side of a non-sculk block. "
+			]
+			icon: "kubejs:sculk_scrubber"
+			id: "21DFDC2132AC4257"
+			shape: "gear"
+			subtitle: "Cleaning Simulator"
+			tasks: [{
+				id: "31E4E088F9C965B0"
+				item: "kubejs:sculk_scrubber"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 9.5d
+		}
+		{
+			description: ["Throwing bricks at the ceiling lamps might yield some important compontens for the upcomming industrial revolution."]
+			icon: "kubejs:fluorescent_tube"
+			id: "3EEB10E1DC378F7A"
+			shape: "square"
+			subtitle: "Lights Out"
+			tasks: [
+				{
+					count: 3L
+					id: "074AA5AE3A6FFA7A"
+					item: "minecraft:brick"
+					type: "item"
+				}
+				{
+					id: "6EFC9A269934A311"
+					item: "kubejs:fluorescent_tube"
+					type: "item"
+				}
+			]
+			title: "Vandalism 2.0"
+			x: 3.0d
+			y: 11.0d
+		}
+		{
+			description: ["With this newfound metal, you can finally begin to truly industrialize, and forge new resources and make new machines. "]
+			icon: "tfmg:steel_block"
+			id: "06120C49B2539938"
+			shape: "gear"
+			size: 3.0d
+			subtitle: "As soon as I understood the weakness of my flesh..."
+			tasks: [{
+				id: "61ED1F4CC9A2962B"
+				item: "tfmg:pumpjack_base"
+				type: "item"
+			}]
+			title: "Strength and Certainty"
+			x: -6.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["21DFDC2132AC4257"]
+			icon: "minecraft:echo_shard"
+			id: "0D675FF9AB9EB351"
+			rewards: [{
+				id: "593F3814AD0A52FF"
+				item: "minecraft:echo_shard"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "2672C94C5A741F77"
+					item: "kubejs:sculked_sculk_scrubber"
+					type: "item"
+				}
+				{
+					id: "2450765960E83D07"
+					item: "minecraft:echo_shard"
+					type: "item"
+				}
+			]
+			title: "Echoes in the Dark"
+			x: 2.0d
+			y: 11.5d
+		}
+		{
+			dependencies: ["0D675FF9AB9EB351"]
+			icon: "thermal:device_collector"
+			id: "2294336C340C6F4F"
+			rewards: [{
+				count: 10
+				id: "5657946C643B13AB"
+				item: "kubejs:carpet_dust"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "18BA54F9B03AEEBF"
+					item: "thermal:device_collector"
+					type: "item"
+				}
+				{
+					id: "3F8AC0A331D175B8"
+					item: "thermal:device_rock_gen"
+					type: "item"
+				}
+				{
+					id: "56FEF910A74B621E"
+					item: "minecraft:lava_bucket"
+					type: "item"
+				}
+			]
+			title: "This place could use some Automated Sweeping"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			description: [
+				"Wallpaper can be dissolved in Redstone Acid to yield the poisonous lead dust within."
+				""
+				"For this you will need to automate Wallpaper. "
+				"Luckily for you, stripped wallpaper magically regrows its wallpaper back over time..."
+			]
+			icon: "thermal:lead_ingot"
+			id: "69C338CC94D0129F"
+			subtitle: "Turning Poison Back Into Lead"
+			tasks: [
+				{
+					id: "4320019E3B2DD7EE"
+					title: "I have automated the Lead"
+					type: "checkmark"
+				}
+				{
+					id: "32874CED3C00136F"
+					item: "thermal:lead_dust"
+					type: "item"
+				}
+			]
+			title: "Renewable Lead"
+			x: 4.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["3EEB10E1DC378F7A"]
+			description: [
+				"You can also restore the damage you have brought to the backrooms by:"
+				""
+				"- Right-clicking floor tiles with carpet"
+				""
+				"- Right-clicking stripped wallpaper with wallpaper"
+				""
+				"- Right-clicking broken ceiling lamps with fluorescent tubes"
+				""
+				"- Right-clicking Timber Frames with wallpaper will create Fake Wallpaper"
+				""
+				"If you like the aesthetic of the concrete tiles you can also turn the concrete tiles into full blocks by right-clicking them with a piece of concrete. This will also prevent the tiles from growing their carpet back."
+				""
+				""
+				"All of this may sound like an insane idea, but turning the lights back on might not be so bad."
+			]
+			icon: {
+				Count: 1
+				id: "immersiveengineering:hammer"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "240D7B64E63FCE4F"
+			subtitle: "Redemption Arc"
+			tasks: [
+				{
+					id: "77BA9C13CBC2B1B7"
+					item: "kubejs:fluorescent_tube"
+					type: "item"
+				}
+				{
+					id: "0EFA283BF071CBDF"
+					item: "kubejs:cut_carpet"
+					type: "item"
+				}
+				{
+					id: "2FEB48503476AD71"
+					item: "kubejs:wallpaper"
+					type: "item"
+				}
+			]
+			title: "Restoring The Backrooms"
+			x: 5.0d
+			y: 13.0d
+		}
+		{
+			description: [""]
+			icon: {
+				Count: 1
+				id: "thermal:flux_drill"
+				tag: { }
+			}
+			id: "18E6448D80D029CF"
+			rewards: [{
+				count: 3
+				id: "32386DE88F6BB26D"
+				item: "thermal:area_radius_augment"
+				type: "item"
+			}]
+			subtitle: "Bzzzzzzz"
+			tasks: [
+				{
+					id: "6A6A8D6820D9F7F0"
+					item: "thermal:tinker_bench"
+					type: "item"
+				}
+				{
+					id: "4B753E9930F1E423"
+					item: {
+						Count: 1
+						id: "thermal:flux_saw"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "5738C60A01394398"
+					item: {
+						Count: 1
+						id: "thermal:flux_drill"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "Powertools"
+			x: 10.0d
+			y: 10.5d
+		}
+		{
+			id: "7C0EE6F4BEE559C3"
+			tasks: [{
+				id: "0432357F061847C7"
+				item: "create:electron_tube"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 15.5d
+		}
+		{
+			description: ["An early ME system might be quite rewarding to set up. Remember that systems without an ME Controller can only have up to 8 devices, so use your channels sparingly."]
+			icon: "ae2:chest"
+			id: "754899C65C2540E0"
+			rewards: [
+				{
+					count: 3
+					id: "589DB142A8826676"
+					item: "supplementaries:confetti_popper"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7EB46B543ACD25F3"
+					item: {
+						Count: 1
+						id: "fairylights:hanging_lights"
+						tag: {
+							pattern: [{
+								Count: 1b
+								id: "fairylights:meteor_light"
+								tag: {
+									color: 8991416
+								}
+							}]
+							string: "fairylights:black_string"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "gear"
+			size: 2.0d
+			subtitle: "Digital Storage"
+			tasks: [
+				{
+					id: "1757AE495DF47591"
+					item: "ae2:chest"
+					type: "item"
+				}
+				{
+					id: "44FDCBE4D6095982"
+					item: "ae2:energy_acceptor"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["754899C65C2540E0"]
+			id: "628045C24DB98BFA"
+			tasks: [{
+				id: "570D1D22D6CC1C91"
+				item: "ae2:crafting_terminal"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"3F5758647B93803C"
+				"06120C49B2539938"
+			]
+			id: "5395C4B60FBDC096"
+			tasks: [{
+				id: "081AD9A20B76A667"
+				item: "kubejs:light_engineering_empty"
+				type: "item"
+			}]
+			title: "Simple Machinery"
+			x: -5.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["06120C49B2539938"]
+			description: ["for most of this chapter you will need oil. it's recomended you start searching right now."]
+			id: "7D54EAE17E378E0C"
+			tasks: [{
+				id: "09C3777DA6DFF83E"
+				item: "tfmg:pumpjack_base"
+				type: "item"
+			}]
+			title: "Oiling Up"
+			x: -10.0d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"0979389031005D5C"
+				"6098A20CA863F3A6"
+			]
+			icon: "tfmg:pumpjack_hammer_head"
+			id: "15ECC94A27CA1EF2"
+			tasks: [
+				{
+					id: "70B3DA2B62E12BCD"
+					item: "tfmg:pumpjack_hammer_head"
+					type: "item"
+				}
+				{
+					count: 5L
+					id: "36FB7797331EE51C"
+					item: { Count: 5, id: "tfmg:pumpjack_hammer_part" }
+					type: "item"
+				}
+				{
+					id: "789C1B19D5EAE79A"
+					item: "tfmg:pumpjack_hammer_connector"
+					type: "item"
+				}
+				{
+					id: "5E099BA32F5D9A29"
+					item: "tfmg:pumpjack_base"
+					type: "item"
+				}
+				{
+					id: "403522A2F72C8252"
+					item: "tfmg:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "26319134D729BE6D"
+					item: "tfmg:machine_input"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "632848B949317257"
+					item: { Count: 2, id: "tfmg:steel_truss" }
+					type: "item"
+				}
+				{
+					id: "467A563888FF59AA"
+					item: "tfmg:pumpjack_hammer"
+					type: "item"
+				}
+			]
+			x: -8.5d
+			y: 13.5d
+		}
+		{
+			dependencies: [
+				"0979389031005D5C"
+				"6098A20CA863F3A6"
+			]
+			icon: "tfmg:large_pumpjack_hammer_head"
+			id: "106A0AEBC62BF1DE"
+			tasks: [
+				{
+					id: "4FB43A8F2DE24E49"
+					item: "tfmg:large_pumpjack_hammer_head"
+					type: "item"
+				}
+				{
+					count: 5L
+					id: "5151E7FE6D8EA6C9"
+					item: "tfmg:large_pumpjack_hammer_part"
+					type: "item"
+				}
+				{
+					id: "38E3904C9A79BAB6"
+					item: "tfmg:large_pumpjack_hammer_connector"
+					type: "item"
+				}
+				{
+					id: "346F2BC7FF51D973"
+					item: "tfmg:pumpjack_base"
+					type: "item"
+				}
+				{
+					id: "3DEF4A228090A692"
+					item: "tfmg:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "01A18D18C43B0DE6"
+					item: "tfmg:machine_input"
+					type: "item"
+				}
+			]
+			x: -11.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["7D54EAE17E378E0C"]
+			description: ["you can pick between the large or default pumpjack heads. you only must complete one of them to continue."]
+			id: "0979389031005D5C"
+			tasks: [{
+				id: "6AB50659DB0084F4"
+				title: "Important Info"
+				type: "checkmark"
+			}]
+			x: -11.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["7D54EAE17E378E0C"]
+			id: "6098A20CA863F3A6"
+			subtitle: "I Like Big Vats and i Cannot Lie"
+			tasks: [
+				{
+					count: 18L
+					id: "5B40EE5137E27607"
+					item: { Count: 18, id: "tfmg:steel_chemical_vat" }
+					type: "item"
+				}
+				{
+					id: "7A29E75DCFB6AE89"
+					item: "tfmg:industrial_mixer"
+					type: "item"
+				}
+				{
+					id: "2D2B59CBFB2A0A36"
+					item: "tfmg:mixer_blade"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "3EFB5730785D8B96"
+					item: { Count: 2, id: "tfmg:steel_truss" }
+					type: "item"
+				}
+				{
+					count: 5L
+					id: "6318FBACB2FD755A"
+					item: { Count: 5, id: "createlowheated:basic_burner" }
+					type: "item"
+				}
+			]
+			title: "Mix-a-Lot"
+			x: -8.5d
+			y: 10.5d
+		}
+		{
+			dependencies: [
+				"106A0AEBC62BF1DE"
+				"15ECC94A27CA1EF2"
+			]
+			dependency_requirement: "one_completed"
+			description: ["Now we're pumping with oil! with your newfound resources you can finally craft the Heavy Engineering Frame!"]
+			id: "2F74CC076512A8FF"
+			tasks: [
+				{
+					id: "0EB3DB38674F8E59"
+					item: "tfmg:crude_oil_bucket"
+					type: "item"
+				}
+				{
+					id: "37E7A3094022C62C"
+					title: "Oil is Pumping"
+					type: "checkmark"
+				}
+			]
+			title: "Black Gold"
+			x: -10.0d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"5395C4B60FBDC096"
+				"06120C49B2539938"
+			]
+			id: "02E7ADE1BD3C10DD"
+			tasks: [{
+				id: "7B6E388A9BD64147"
+				item: "immersiveengineering:light_engineering"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 8.5d
+		}
+		{
+			description: [
+				"You'll need some oil at the start to get the rubber neccessary to start drilling. "
+				""
+				"you can find two buckets of oil above the oil deposits sitting around the map."
+			]
+			id: "7E9171FE5C37E0DC"
+			tasks: [{
+				id: "3A5EF6BD077150B6"
+				item: "tfmg:oil_deposit"
+				type: "item"
+			}]
+			title: "Early Drilling"
+			x: -10.0d
+			y: 10.5d
+		}
+	]
+	title: "Chapter 4"
+}
