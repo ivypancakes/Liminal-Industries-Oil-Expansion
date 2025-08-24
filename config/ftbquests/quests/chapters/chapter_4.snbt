@@ -9,7 +9,10 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["7C0EE6F4BEE559C3"]
+			dependencies: [
+				"7C0EE6F4BEE559C3"
+				"38091269EC4D0747"
+			]
 			description: ["The Heavy Engineering Frame marks the start of the construction of the heavier machines. They will form the foundation for the megafactory that is being constructed."]
 			id: "78F13758BBD911A0"
 			rewards: [
@@ -51,6 +54,7 @@
 					type: "item"
 				}
 			]
+			shape: "gear"
 			size: 3.0d
 			tasks: [
 				{
@@ -64,10 +68,11 @@
 					type: "item"
 				}
 			]
-			x: 10.0d
-			y: 19.0d
+			x: -5.0d
+			y: 17.0d
 		}
 		{
+			dependencies: ["02E7ADE1BD3C10DD"]
 			description: [
 				"In order for the Sculk Scrubber to function, it must be placed above a block of Sculk."
 				""
@@ -86,8 +91,8 @@
 				item: "kubejs:sculk_scrubber"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 9.5d
+			x: -3.0d
+			y: 6.5d
 		}
 		{
 			description: ["Throwing bricks at the ceiling lamps might yield some important compontens for the upcomming industrial revolution."]
@@ -109,8 +114,8 @@
 				}
 			]
 			title: "Vandalism 2.0"
-			x: 3.0d
-			y: 11.0d
+			x: -2.5d
+			y: 4.5d
 		}
 		{
 			description: ["With this newfound metal, you can finally begin to truly industrialize, and forge new resources and make new machines. "]
@@ -125,8 +130,8 @@
 				type: "item"
 			}]
 			title: "Strength and Certainty"
-			x: -6.5d
-			y: 5.5d
+			x: -5.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["21DFDC2132AC4257"]
@@ -150,8 +155,8 @@
 				}
 			]
 			title: "Echoes in the Dark"
-			x: 2.0d
-			y: 11.5d
+			x: -2.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["0D675FF9AB9EB351"]
@@ -181,8 +186,8 @@
 				}
 			]
 			title: "This place could use some Automated Sweeping"
-			x: 4.0d
-			y: 6.0d
+			x: -1.0d
+			y: 8.5d
 		}
 		{
 			description: [
@@ -255,8 +260,8 @@
 				}
 			]
 			title: "Restoring The Backrooms"
-			x: 5.0d
-			y: 13.0d
+			x: 0.0d
+			y: 2.0d
 		}
 		{
 			description: [""]
@@ -309,8 +314,8 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 15.5d
+			x: -1.5d
+			y: 13.0d
 		}
 		{
 			description: ["An early ME system might be quite rewarding to set up. Remember that systems without an ME Controller can only have up to 8 devices, so use your channels sparingly."]
@@ -358,8 +363,8 @@
 					type: "item"
 				}
 			]
-			x: -1.5d
-			y: -0.5d
+			x: -2.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["754899C65C2540E0"]
@@ -384,8 +389,8 @@
 				type: "item"
 			}]
 			title: "Simple Machinery"
-			x: -5.0d
-			y: 7.0d
+			x: -2.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["06120C49B2539938"]
@@ -398,7 +403,7 @@
 			}]
 			title: "Oiling Up"
 			x: -10.0d
-			y: 9.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
@@ -452,7 +457,7 @@
 				}
 			]
 			x: -8.5d
-			y: 13.5d
+			y: 7.5d
 		}
 		{
 			dependencies: [
@@ -495,7 +500,7 @@
 				}
 			]
 			x: -11.5d
-			y: 13.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["7D54EAE17E378E0C"]
@@ -506,12 +511,21 @@
 				title: "Important Info"
 				type: "checkmark"
 			}]
-			x: -11.5d
-			y: 10.5d
+			x: -10.0d
+			y: 6.0d
 		}
 		{
-			dependencies: ["7D54EAE17E378E0C"]
+			dependencies: [
+				"74A428CBE14EBFC7"
+				"0979389031005D5C"
+			]
+			icon: "tfmg:mixer_blade"
 			id: "6098A20CA863F3A6"
+			rewards: [{
+				id: "3E22E643D2D85311"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			subtitle: "I Like Big Vats and i Cannot Lie"
 			tasks: [
 				{
@@ -544,8 +558,8 @@
 				}
 			]
 			title: "Mix-a-Lot"
-			x: -8.5d
-			y: 10.5d
+			x: -10.0d
+			y: 7.5d
 		}
 		{
 			dependencies: [
@@ -554,6 +568,7 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["Now we're pumping with oil! with your newfound resources you can finally craft the Heavy Engineering Frame!"]
+			icon: "thermal:crude_oil_bucket"
 			id: "2F74CC076512A8FF"
 			tasks: [
 				{
@@ -569,21 +584,24 @@
 			]
 			title: "Black Gold"
 			x: -10.0d
-			y: 15.0d
+			y: 9.0d
 		}
 		{
 			dependencies: [
 				"5395C4B60FBDC096"
 				"06120C49B2539938"
+				"3EEB10E1DC378F7A"
 			]
 			id: "02E7ADE1BD3C10DD"
+			shape: "gear"
+			size: 2.0d
 			tasks: [{
 				id: "7B6E388A9BD64147"
 				item: "immersiveengineering:light_engineering"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 8.5d
+			x: -5.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -598,7 +616,91 @@
 				type: "item"
 			}]
 			title: "Early Drilling"
+			x: -8.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7E9171FE5C37E0DC"]
+			description: ["You'll need to distill some oil to make rubber to get started with oil pumping. don't prepare to make this your final setup though..."]
+			icon: "tfmg:heavy_oil_bucket"
+			id: "74A428CBE14EBFC7"
+			rewards: [{
+				id: "2F3D755BE684A25C"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.0d
+			tasks: [
+				{
+					id: "723CC5A66CA55F4F"
+					item: "tfmg:steel_distillation_controller"
+					type: "item"
+				}
+				{
+					id: "3213EA0ED4FEF773"
+					item: "tfmg:industrial_pipe"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "12BE31A3A17390E0"
+					item: { Count: 2, id: "tfmg:steel_distillation_output" }
+					type: "item"
+				}
+				{
+					count: 20L
+					id: "29DFFC25E85BA42B"
+					item: { Count: 20, id: "tfmg:steel_fluid_tank" }
+					type: "item"
+				}
+			]
+			title: "Baby's First Distillery"
+			x: -8.5d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"2F74CC076512A8FF"
+				"365562DA49BE12DF"
+			]
+			description: ["Steel Mechanisms are used for the creation of Heavy Machine Frames. you might want to move to one of the rings for this"]
+			id: "38091269EC4D0747"
+			tasks: [{
+				id: "38FDA9C7E41EB52D"
+				item: "tfmg:steel_mechanism"
+				type: "item"
+			}]
+			title: "Advanced Mechanisms"
 			x: -10.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"2F74CC076512A8FF"
+				"2B934534DB3DCCA8"
+			]
+			id: "365562DA49BE12DF"
+			tasks: [{
+				id: "22803A712DE4EF8F"
+				item: "tfmg:rubber_sheet"
+				type: "item"
+			}]
+			title: "Black and Sticky"
+			x: -8.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["2F74CC076512A8FF"]
+			description: ["With oil pumping, you can finally create the final distillation setup. you can now automate rubber and create Steel Mechanisms, the next step in your industrializing journey."]
+			id: "2B934534DB3DCCA8"
+			tasks: [{
+				id: "1392865BF173953C"
+				item: "tfmg:steel_distillation_controller"
+				type: "item"
+			}]
+			title: "Distilling 2 Electric Boogaloo"
+			x: -11.5d
 			y: 10.5d
 		}
 	]

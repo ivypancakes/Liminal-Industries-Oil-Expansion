@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "description": "Cleans up Create's Glass Pipes",
+    "pack_format": {"min_inclusive": 15, "max_inclusive": 99}
+  }
+}

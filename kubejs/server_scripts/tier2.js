@@ -120,15 +120,15 @@ ServerEvents.recipes(event => {
 		'   ',
 		'A A'  
 		],{
-		A: 'minecraft:iron_ingot'
+		A: 'tfmg:cast_iron_ingot'
   	})
 
-	event.shaped('kubejs:heavy_engineering_empty', [
+	event.shaped('kubejs:heavy_engineering_empty', [	
 		'A A', 
 		'   ',
 		'A A'  
 		],{
-		A: 'immersiveengineering:ingot_steel'
+		A: 'tfmg:steel_ingot'
   	})
 
     event.replaceInput({id: 'minecraft:flint_and_steel'}, 'minecraft:iron_ingot', 'minecraft:flint')

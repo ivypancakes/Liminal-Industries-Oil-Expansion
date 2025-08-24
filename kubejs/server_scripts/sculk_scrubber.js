@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
 		'ABA'  
 		],{
 		A: 'immersiveengineering:component_electronic',
-		B: 'thermal:rf_coil',
+		B: 'tfmg:lithium_block',
 		C: 'thermal:device_nullifier',
 		D: 'immersiveengineering:light_engineering',
 		E: 'minecraft:iron_bars'

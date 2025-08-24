@@ -220,4 +220,8 @@ ServerEvents.tags('item', event => {
 
 
 })
+ServerEvents.tags('fluid', event => {
+  // Get the #forge:cobblestone tag collection and add Diamond Ore to it
+  event.add('forge:molten_lithium', 'kubejs:molten_lithium')
+})
 

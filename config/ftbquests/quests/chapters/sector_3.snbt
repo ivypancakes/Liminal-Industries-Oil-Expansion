@@ -336,7 +336,7 @@
 				"0E01584B3867E3B0"
 				"6AEF6DE7C47568AE"
 				"7BC25405C23D7BDF"
-				"5CE78F3B9E2BDC0F"
+				"009DD744E027244B"
 			]
 			id: "572AD4DE946B6915"
 			rewards: [{
@@ -743,51 +743,6 @@
 			y: 44.0d
 		}
 		{
-			dependencies: [
-				"6762380EB7B4FB9A"
-				"7DB91F364892F863"
-			]
-			description: [
-				"Oil can be tapped out of Crude Oil Soaked Carpet endlessly by right-clicking it with a sponge."
-				"Uppon right-clicking Crude Oil will erupt from the carpet, ready to be picked up."
-				""
-				"It is recommended that you automate this process."
-				""
-				""
-				"{image:kubejs:textures/quests/oil_carpet.png width:192 height:102 align:center}"
-			]
-			icon: "thermal:crude_oil_bucket"
-			id: "5CE78F3B9E2BDC0F"
-			rewards: [{
-				id: "3D2AF867A4A0D650"
-				item: "kubejs:party_popper"
-				type: "item"
-			}]
-			shape: "square"
-			subtitle: "Black Gold"
-			tasks: [
-				{
-					id: "771A90A2218D4A0A"
-					item: "minecraft:sponge"
-					type: "item"
-				}
-				{
-					id: "38006D03C271FDD8"
-					item: "thermal:crude_oil_bucket"
-					optional_task: true
-					type: "item"
-				}
-				{
-					id: "2395FB904349D0C4"
-					item: "thermal:tar"
-					type: "item"
-				}
-			]
-			title: "Carpet Oil"
-			x: -4.0d
-			y: 28.5d
-		}
-		{
 			dependencies: ["246A2048B0070B20"]
 			description: ["The Empowerer needs to be surrounded by four Display Stands in all cardinal directions. When powered by the right amount of energy, they can empower all kinds of crystals that you will need for the late-game."]
 			id: "7BC25405C23D7BDF"
@@ -835,40 +790,6 @@
 			y: 44.0d
 		}
 		{
-			dependencies: ["246A2048B0070B20"]
-			description: [
-				"The Fractionating Still can turn Crude Oil into Bitumen leading to the creation of Tar when using this machine in combination with the Pyroliser."
-				""
-				"Additionally, the Fractionating Still can also be used to make Refined Fuel. This can be turned into a good amount of power or heat for the Steam Engine."
-			]
-			id: "6762380EB7B4FB9A"
-			shape: "gear"
-			tasks: [{
-				id: "1D2EC5F6CB2C5D41"
-				item: "thermal:machine_refinery"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 24.0d
-		}
-		{
-			dependencies: ["246A2048B0070B20"]
-			description: [
-				"The Pyrolizer can be used to turn Bitumen into Tar."
-				""
-				"Tar will be needed to empower the Void Crystals."
-			]
-			id: "7DB91F364892F863"
-			shape: "gear"
-			tasks: [{
-				id: "4CEDF492E888799C"
-				item: "thermal:machine_pyrolyzer"
-				type: "item"
-			}]
-			x: -8.5d
-			y: 24.0d
-		}
-		{
 			dependencies: ["64C1F773CA05847E"]
 			description: [
 				"With this setup you can make renewable iron."
@@ -907,7 +828,6 @@
 			y: 11.5d
 		}
 		{
-			dependencies: ["7DB91F364892F863"]
 			icon: "minecraft:echo_shard"
 			id: "12DFA2DB1838355D"
 			rewards: [{
@@ -1155,38 +1075,6 @@
 			y: 36.0d
 		}
 		{
-			dependencies: ["5CE78F3B9E2BDC0F"]
-			description: [
-				"You can turn Light Oil into Refined Fuel."
-				""
-				"Blazes will get superheated when you give them a straw and pump Refined Fuel into them. This will make your steam engine burn a whole lot brighter."
-			]
-			icon: "thermal:refined_fuel_bucket"
-			id: "641ACE318273962A"
-			tasks: [
-				{
-					id: "09794B81B3381C9C"
-					item: "createaddition:straw"
-					type: "item"
-				}
-				{
-					id: "66F816A9CA9EBB68"
-					item: "create:blaze_burner"
-					type: "item"
-				}
-				{
-					amount: 1000L
-					fluid: "thermal:refined_fuel"
-					id: "4DF4BA56B93DA6AA"
-					optional_task: true
-					type: "fluid"
-				}
-			]
-			title: "Refined Fuel"
-			x: -2.0d
-			y: 28.5d
-		}
-		{
 			dependencies: ["64C1F773CA05847E"]
 			description: [
 				"With this setup you can make renewable zinc."
@@ -1244,6 +1132,18 @@
 			title: "The Wall Piercer"
 			x: 2.5d
 			y: 18.0d
+		}
+		{
+			description: ["TFMG Returns with a resource for progression: rubber! you'll need this for insulation, electricity, and so on. better automate this!"]
+			id: "009DD744E027244B"
+			tasks: [{
+				id: "49AA94565690185B"
+				item: "tfmg:rubber_sheet"
+				type: "item"
+			}]
+			title: "Return of Rubber"
+			x: -3.5d
+			y: 28.5d
 		}
 	]
 	title: "Chapter 5"

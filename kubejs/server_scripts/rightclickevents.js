@@ -1,12 +1,4 @@
-BlockEvents.rightClicked('kubejs:oil_carpet', event => {
-
-	if (event.item.id == 'minecraft:sponge') {
-		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run function backrooms:oil_bubble`)
-		event.cancel()
-		}
-	})
-
-BlockEvents.rightClicked('kubejs:wallpaper1', event => {
+	BlockEvents.rightClicked('kubejs:wallpaper1', event => {
   		const heldItem = event.item
 
   	if (heldItem && heldItem.hasTag('minecraft:axes')) {
@@ -170,7 +162,7 @@ BlockEvents.rightClicked(/.*/, event => {
 	if (event.item.id == 'tconstruct:magma_bucket') {
 		event.item.count--
 		event.player.give('minecraft:bucket')
-
+1
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run summon magma_cube ~ ~1 ~ {Health:1f,Size:0}`)
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run playsound minecraft:item.bucket.empty_lava master @a ~ ~ ~ 1 0`)
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run particle lava ~ ~ ~ 0 0 0 0.5 10 force`)

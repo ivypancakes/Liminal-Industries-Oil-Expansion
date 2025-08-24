@@ -1,6 +1,5 @@
 // priority: 0
 
-
 StartupEvents.registry('block', event => {
 
 //Wallpapers
@@ -786,8 +785,8 @@ StartupEvents.registry('item', event => {
 	event.create('data_chip9').displayName('Data Chip')
 	event.create('data_chip10').displayName('Data Chip')
 	event.create('data_chip_infinity').displayName('Modified Data Chip')
-	event.create('data_chip_error').displayName('Broken Data Chip')
-
+	event.create('data_chip_error').displayName('Broken Data Chip') 
+	
 })
 
 StartupEvents.registry('fluid', event => {
@@ -796,5 +795,9 @@ StartupEvents.registry('fluid', event => {
 		.stillTexture('kubejs:block/liquid_time_flow')
 		.flowingTexture('kubejs:block/liquid_time_flow')
 		.bucketColor(0xFFFFFF)
-		.noBlock() 
+		.noBlock()
+	event.create('molten_lithium')
+    	.thickTexture(0xC9C1B2)
+    	.bucketColor(0xC9C1B2)
+    	.displayName('Molten Lithium')
 })

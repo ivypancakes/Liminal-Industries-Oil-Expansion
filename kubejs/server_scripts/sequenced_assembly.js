@@ -14,7 +14,7 @@ ServerEvents.recipes(event => {
         'immersiveengineering:component_electronic_adv'
      ], 'immersiveengineering:plate_duroplast', [
         event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'actuallyadditions:empowered_void_crystal']),
-        event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:tfmg:rubber_sheet']),
+        event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'tfmg:rubber_sheet']),
         event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:wire_electrum']),
         event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:electron_tube'])
      ]).transitionalItem('kubejs:incomplete_component_electronic_adv').loops(1)

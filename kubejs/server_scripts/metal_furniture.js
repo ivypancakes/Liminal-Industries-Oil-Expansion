@@ -51,6 +51,81 @@ ServerEvents.recipes(event => {
 		})
 	}
 
+	let metalCasting = (Type, Cast, CastMaterial, Material) => {
+		let consumeCast = false
+		let TimeCool = 0
+		let TableAmount = 0
+		let Cast2 = ''
+		let CastType = ''
+		
+		if (Type == 'basin') {
+			event.custom({
+				"type": "tconstruct:casting_basin",
+				"conditions": [
+					{
+					"type": "mantle:tag_filled",
+					"tag": "forge:storage_blocks/" + Material
+					}
+				],
+				"cooling_time": 141,
+				"fluid": {
+					"amount": 810,
+					"tag": "forge:molten_" + Material
+				},
+				"result": {
+					"tag": "forge:storage_blocks/" + Material
+				}
+			})
+		}
+		if (Type == 'Table') {
+			if (CastMaterial == 'gold') {
+				consumeCast = false
+				CastType = 'multi_use' 
+			}
+			if (CastMaterial == 'sand') {
+				consumeCast = true
+				CastType = 'single_use' 
+			}
+			if (Cast == 'ingots') {
+				Cast2 = 'ingot'
+				TimeCool = 14
+				TableAmount = 10
+			}
+			if (Cast == 'nuggets') {
+				Cast2 = 'nugget'
+				TimeCool = 43
+				TableAmount = 90
+			}
+			event.custom({
+				type: "tconstruct:casting_table",
+				cast: {
+					tag: `tconstruct:casts/${CastType}/${Cast2}`
+				},
+				cast_consumed: consumeCast,
+				conditions: [
+					{
+						type: "mantle:tag_filled",
+						tag: `forge:${Cast}/${Material}`
+					}
+				],
+				cooling_time: TimeCool,
+				fluid: {
+					amount: TableAmount,
+					tag: `forge:molten_${Material}`
+				},
+				result: {
+					tag: `forge:${Cast}/${Material}`
+				}
+			})
+
+		}
+	}
+	metalCasting('basin', '', '', 'lithium')
+	metalCasting('table', 'ingots', 'gold', 'lithium')
+	metalCasting('table', 'ingots', 'sand', 'lithium')
+	metalCasting('table', 'nuggets', 'gold', 'lithium')
+	metalCasting('table', 'nuggets', 'sand', 'lithium')
+
 	event.remove({ id: 'refurbished_furniture:constructing/light_fridge' })
 	event.remove({ id: 'refurbished_furniture:constructing/dark_fridge' })
 	melting(
@@ -125,6 +200,30 @@ ServerEvents.recipes(event => {
 		'kubejs:battery', 
 		'tconstruct:molten_zinc', 
 		270
+	)
+
+	melting(
+		'kubejs:lithium_battery', 
+		'forge:molten_lithium', 
+		270
+	)
+
+	melting(
+		'tfmg:lithium_ingot', 
+		'forge:molten_lithium', 
+		90
+	)
+
+	melting(
+		'tfmg:lithium_nugget', 
+		'forge:molten_lithium', 
+		10
+	)
+
+	melting(
+		'tfmg:lithium_block', 
+		'forge:molten_lithium', 
+		810
 	)
 
 	melting(
@@ -237,6 +336,88 @@ ServerEvents.recipes(event => {
 		'tconstruct:molten_silver', 
 		900
 	)
+	event.custom({
+		type: "tconstruct:casting_table",
+		cast: {
+			tag: 'tconstruct:casts/multi_use/nugget'
+		},
+		conditions: [
+			{
+				type: "mantle:tag_filled",
+				tag: 'forge:nuggets/lithium'
+			}
+		],
+		cooling_time: 14,
+		fluid: {
+			amount: 10,
+			tag: 'forge:molten_lithium'
+		},
+		result: {
+			tag: 'forge:nuggets/lithium'
+		}
+	})
+		event.custom({
+		type: "tconstruct:casting_table",
+		cast: {
+			tag: 'tconstruct:casts/multi_use/nugget'
+		},
+	  	"cast_consumed": true,
+		conditions: [
+			{
+				type: "mantle:tag_filled",
+				tag: 'forge:nuggets/lithium'
+			}
+		],
+		cooling_time: 14,
+		fluid: {
+			amount: 10,
+			tag: 'forge:molten_lithium'
+		},
+		result: {
+			tag: 'forge:nuggets/lithium'
+		}
+	})
+		event.custom({
+		type: "tconstruct:casting_table",
+		cast: {
+			tag: 'tconstruct:casts/multi_use/ingot'
+		},
+		conditions: [
+			{
+				type: "mantle:tag_filled",
+				tag: 'forge:ingots/lithium'
+			}
+		],
+		cooling_time: 43,
+		fluid: {
+			amount: 90,
+			tag: 'forge:molten_lithium'
+		},
+		result: {
+			tag: 'forge:ingots/lithium'
+		}
+	})
+		event.custom({
+		type: "tconstruct:casting_table",
+		cast: {
+			tag: 'tconstruct:casts/single_use/ingot'
+		},
+	  	"cast_consumed": true,
+		conditions: [
+			{
+				type: "mantle:tag_filled",
+				tag: 'forge:ingots/lithium'
+			}
+		],
+		cooling_time: 43,
+		fluid: {
+			amount: 0,
+			tag: 'forge:molten_lithium'
+		},
+		result: {
+			tag: 'forge:ingots/lithium'
+		}
+	})
 /*
 	let iron_melting = (Input) => {
 		melting(

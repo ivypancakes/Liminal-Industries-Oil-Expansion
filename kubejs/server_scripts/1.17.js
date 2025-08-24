@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-
+	
 	event.shaped(
 		'2x kubejs:wall_destroyer',
 		[ 

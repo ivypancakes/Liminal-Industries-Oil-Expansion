@@ -3,9 +3,12 @@ ServerEvents.recipes(event => {
     event.remove({id: 'immersiveengineering:metalpress/plate_steel'})
     event.remove({id: 'thermal:smelting/cured_rubber_from_smelting'})
     event.remove({id: 'thermal:smelting/cured_rubber_from_smelting'})
-
+    
+    event.remove({output: 'thermal:bitumen'})
+    event.remove({output: 'thermal:tar'})
 	event.remove({output: 'tfmg:pumpjack_crank'})
 	event.remove({output: 'tfmg:pumpjack_base'})
+    event.remove({output: 'ae2:chest'})
 
     event.shaped('tfmg:pumpjack_crank', [
         'A A',
@@ -17,6 +20,18 @@ ServerEvents.recipes(event => {
         C: 'tfmg:steel_mechanism',
         D: 'tfmg:rebar',
         E: 'tfmg:heavy_machinery_casing'
+    })
+        event.shaped('ae2:chest', [
+        'ABA',
+        'CDC',
+        'EFE'  
+        ],{
+        A: '#forge:glass',
+        B: 'ae2:terminal',
+        C: 'ae2:fluix_glass_cable',
+        D: 'immersiveengineering:light_engineering',
+        E: 'tfmg:steel_ingot',
+        F: 'tfmg:lithium_ingot'
     })
     event.shaped('tfmg:pumpjack_base', [
         'ABA',
@@ -30,5 +45,6 @@ ServerEvents.recipes(event => {
         E: 'tfmg:steel_pipe',
         F: 'tfmg:industrial_pipe'
     })
+    event
     
 })
